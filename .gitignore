@@ -1,0 +1,4 @@
+# Generated files that were compiled
+*.o
+*.a
+*.so
