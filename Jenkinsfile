@@ -10,8 +10,8 @@ pipeline{
 
         stage('Configure Git') {
             steps {
-                sh 'git config --global user.email "ogbonniachibundu@gmail.com'
-                sh 'git config --global user.name "Jenkins CI"'
+                sh 'git config --global user.email "chibunduogbonnia@gmail.com'
+                sh 'git config --global user.name "Chibundu Ogbonnia"'
             }
         }
 
