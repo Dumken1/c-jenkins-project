@@ -7,10 +7,11 @@ pipeline{
     }
 
     stages {
-        
-        stage('Check Git Config') {
+
+        stage('Configure Git') {
             steps {
-                sh 'git config --list'
+                sh 'git config --global user.email "ogbonniachibundu@gmail.com'
+                sh 'git config --global user.name "Jenkins CI"'
             }
         }
 
