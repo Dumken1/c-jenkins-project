@@ -13,13 +13,13 @@ pipeline{
             }
         }
 
-        stage(name: 'Build'){
+        stage('Build'){
             step{
                 sh 'make'
             }
         }
 
-        stage(name: 'Test'){
+        stage('Test'){
             step{
                 sh 'make test'
             }
@@ -28,10 +28,10 @@ pipeline{
 
     post{
         success{
-            echo(message: 'Project build and Test successful')
+            echo('Project build and Test successful')
         }
         failure{
-            echo(message: 'Build failed')
+            echo('Build failed')
         }
     }
 }
