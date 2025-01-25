@@ -2,3 +2,9 @@
 *.o
 *.a
 *.so
+
+# Log files
+*.log
+
+# Executable
+my_program
