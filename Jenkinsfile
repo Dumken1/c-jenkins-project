@@ -14,13 +14,13 @@ pipeline{
         }
 
         stage('Build'){
-            step{
+            steps{
                 sh 'make'
             }
         }
 
         stage('Test'){
-            step{
+            steps{
                 sh 'make test'
             }
         }
