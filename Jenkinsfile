@@ -8,6 +8,18 @@ pipeline{
 
     stages {
 
+        stage('Debug Environment') {
+            steps {
+                sh '''
+                    echo "Running as user: $(whoami)"
+                    echo "Current directory: $(pwd)"
+                    git config --global --list || echo "No global Git config found"
+                    git config --local --list || echo "No local Git config found"
+                '''
+            }
+        }
+
+
         stage('Configure Git') {
             steps {
                 sh 'git config --global user.email "chibunduogbonnia@gmail.com'
