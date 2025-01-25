@@ -7,6 +7,13 @@ pipeline{
     }
 
     stages {
+        
+        stage('Check Git Config') {
+            steps {
+                sh 'git config --list'
+            }
+        }
+
         stage('Clone Repository'){
             steps{
                 git branch: 'main', url: 'https://github.com/Dumken1/c-jenkins-project.git'
