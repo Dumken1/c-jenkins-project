@@ -13,12 +13,6 @@ pipeline{
             }
         }
 
-        stage('Checkout SCM') {
-            steps {
-                sh 'git config --list --show-origin'
-            }
-        }
-
         stage('Build'){
             steps{
                 sh 'make'
