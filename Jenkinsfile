@@ -27,8 +27,8 @@ pipeline{
 
         stage('Tag and Push') {
             steps {
-                sh 'git tag -a v1.2.4 -m "Tag created by Jenkins"'
-                sh 'git push origin v1.2.4'
+                sh 'git tag -a v1.2.5 -m "Tag created by Jenkins"'
+                sh 'git push origin v1.2.5'
             }
         }
     }
