@@ -9,7 +9,7 @@ pipeline{
     stages {
         stage('Clone Repository'){
             steps{
-                git 'https://github.com/Dumken1/c-jenkins-project.git'
+                git branch: 'main', url: 'https://github.com/Dumken1/c-jenkins-project.git'
             }
         }
 
