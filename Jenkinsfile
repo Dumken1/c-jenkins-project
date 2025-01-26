@@ -7,9 +7,9 @@ pipeline{
     }
 
     stages {
-        stage('Set Git identity') {
-            steps {
-                sh 'git config --list --show-origin'
+        stage('Clone Repository'){
+            steps{
+                git 'https://github.com/Dumken1/c-jenkins-project.git'
             }
         }
 
