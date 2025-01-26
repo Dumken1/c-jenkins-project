@@ -27,9 +27,10 @@ pipeline{
             }
         }
 
-        stage('Push') {
+        stage('Tag') {
             steps {
-                sh 'git push origin main'
+                sh 'git tag -a v1.2.6 -m "Tag v1.2.6 created by Jenkins"'
+                sh 'git push origin v1.2.6'
             }
         }
     }
