@@ -9,23 +9,16 @@ pipeline{
     stages {
         stage('Set Git identity') {
             steps {
-                sh """
-                  git config --global user.email "jenkins@example.com"
-                  git config --global user.name  "Jenkins CI"
-                """
+                sh 'git config --list --show-origin'
             }
         }
+
         stage('Checkout SCM') {
             steps {
-                checkout scm
+                sh 'git config --list --show-origin'
             }
         }
-        stage('Commit/Tag') {
-            steps {
-                // do the commit, tag, etc. here
-                sh 'git tag -a -f -m "Jenkins Build" jenkins-C_Test_Project-18'
-            }
-        }
+
         stage('Build'){
             steps{
                 sh 'make'
