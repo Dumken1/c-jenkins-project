@@ -7,9 +7,11 @@ pipeline{
     }
 
     stages {
-        stage('Clone'){
-            steps{
-                git branch: 'main', url: 'https://github.com/Dumken1/c-jenkins-project.git'
+        stage('Clone Repository') {
+            steps {
+                sshagent(['Dumken1']) {
+                    sh 'git clone git@github.com:Dumken1/c-jenkins-project.git'
+                }
             }
         }
 
