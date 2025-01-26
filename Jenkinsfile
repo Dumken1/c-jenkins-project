@@ -24,6 +24,13 @@ pipeline{
                 sh 'make test'
             }
         }
+
+        stage('Tag and Push') {
+            steps {
+                sh 'git tag -a v1.2.3 -m "Tag created by Jenkins"'
+                sh 'git push origin v1.2.3'
+            }
+        }
     }
 
     post{
