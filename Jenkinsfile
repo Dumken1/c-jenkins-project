@@ -10,7 +10,7 @@ pipeline{
         stage('Clone Repository') {
             steps {
                 sshagent(['7346eab3-f036-485f-b79b-380e049430d9']) {
-                    sh 'git clone git@github.com:Dumken1/c-jenkins-project.git'
+                    sh 'git pull git@github.com:Dumken1/c-jenkins-project.git'
                 }
             }
         }
