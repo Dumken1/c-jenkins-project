@@ -7,7 +7,7 @@ pipeline{
     }
 
     stages {
-        stage('Clone Repository'){
+        stage('Clone'){
             steps{
                 git branch: 'main', url: 'https://github.com/Dumken1/c-jenkins-project.git'
             }
