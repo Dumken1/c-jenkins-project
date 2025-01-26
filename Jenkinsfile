@@ -8,19 +8,25 @@ pipeline{
 
     stages {
 
-        stage('Configure Git') {
+        sstage('Set Git identity') {
             steps {
-                sh 'git config user.email "chibunduogbonnia@gmail.com'
-                sh 'git config user.name "Chibundu Ogbonnia"'
+                sh """
+                  git config --global user.email "jenkins@example.com"
+                  git config --global user.name  "Jenkins CI"
+                """
             }
         }
-
-        stage('Clone Repository'){
-            steps{
-                git 'https://github.com/Dumken1/c-jenkins-project.git'
+        stage('Checkout SCM') {
+            steps {
+                checkout scm
             }
         }
-
+        stage('Commit/Tag') {
+            steps {
+                // do the commit, tag, etc. here
+                sh 'git tag -a -f -m "Jenkins Build" jenkins-C_Test_Project-18'
+            }
+        }
         stage('Build'){
             steps{
                 sh 'make'
