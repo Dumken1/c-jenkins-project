@@ -7,8 +7,7 @@ pipeline{
     }
 
     stages {
-
-        sstage('Set Git identity') {
+        stage('Set Git identity') {
             steps {
                 sh """
                   git config --global user.email "jenkins@example.com"
